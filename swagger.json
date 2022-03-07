@@ -1,0 +1,196 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Blog API"
+    },
+    "paths": {
+        "/add": {
+            "post": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "add new course.",
+                "operationId": "course",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "add new course",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/list": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course list .",
+                "operationId": "list",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/info/{id}": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Course by id.",
+                "operationId": "selected course",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Get specific course by it's id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/update/{id}":{
+            "put": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Update course.",
+                "operationId": "createlike",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update specific course using it's uniqe id.",
+                        "required": true,
+                        "schema": {
+                          "$ref": "#/definitions/like"
+                        }
+                      },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "post id that needs to be added to the likes",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/like"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }, 
+        "/delete/{id}":{
+            "delete": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Delete course.",
+                "operationId": "createlike",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],"parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "post id that needs to be added to the likes",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/like"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+         "definitions": {
+        "User": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "days_to_complete": {
+                    "type": "string"
+                },
+                "short_description": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "course_type": {
+                    "type": "string"
+                },
+                "lang_available": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
+
+        
+    }
+   
+
+
+
+
+
+
